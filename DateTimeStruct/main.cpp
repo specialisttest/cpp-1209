@@ -68,11 +68,11 @@ void print(const Time& t)
 }
 
 int main(int argc, char** argv) {
-	Time t;
+	Time t = {0, 0, 0};
     read(t);
     print(t);
 
-    Date d;
+    Date d = {0, 0, 0};
     read(d);
     print(d);
 }
