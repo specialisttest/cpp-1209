@@ -1,5 +1,18 @@
 #include <iostream>
+#include <iomanip>
+#include <ctime>
 #include "Date.h"
+
+Date::Date()
+{
+	time_t t = time(NULL);
+	struct tm now = *localtime(&t);
+	set(now.tm_year + 1900, now.tm_mon + 1, now.tm_mday);
+	/*_year = now.tm_year + 1900;
+	_month = now.tm_mon + 1;
+	_day = now.tm_mday;*/
+	
+}
 
 void Date::set(int _year, int month, int day)
 {
@@ -14,10 +27,13 @@ void Date::set(int _year, int month, int day)
 using std::cout;
 using std::cin;
 using std::endl;
+using std::setfill;
+using std::setw;
 
 void Date::print() const
 {
-    cout << _year << '.' << _month << '.' << _day << endl;
+    cout << _year << '.' << setfill('0') << setw(2) <<_month 
+		<< '.' << setw(2) << _day << endl;
 }
 
 void Date::read()
