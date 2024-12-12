@@ -1,11 +1,21 @@
 #include <iostream>
 #include "Shape.h"
 #include "Point.h"
+#include "Circle.h"
+#include "Scene.h"
 
 using std::cout;
 using std::endl;
 
 int main(int argc, char** argv) {
+	Scene* pScene = new Scene();
+	pScene->add(new Point(10, 20, "green"));
+	pScene->add(new Circle(100, 200, 50, "red"));
+	
+	pScene->draw();
+	
+	delete pScene;
+		
 	Point* p1 = new Point(10, 20);
 	
 	//p1->draw(); // Point::draw()
