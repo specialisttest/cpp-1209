@@ -1,6 +1,11 @@
 #ifndef _DATE_H_
 #define _DATE_H_
 
+#include "iostream"
+
+using std::ostream;
+using std::istream;
+
 class Date
 {
 private:
@@ -39,9 +44,12 @@ public:
     bool operator ==(const Date& d) const { return equals(d);}
     bool operator !=(const Date& d) const { return !equals(d);}
     
+    friend ostream& operator << (ostream& s, const Date& d);
 
 };
 
 int compareDate(const void* d1, const void* d2);
+ostream& operator << (ostream& s, const Date& d);
+istream& operator >> (istream& s, Date& d);
 
 #endif

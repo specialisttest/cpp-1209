@@ -1,11 +1,16 @@
 #include <cmath>
 #include <iostream>
+#include <fstream>
+
 #include "mylib.h"
 #include "Point.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::ofstream;
+using std::ios;
+
 
 double distance(const Point& p1, const Point& p2) {
 	//p2.setX(300);
@@ -136,6 +141,10 @@ int main(int argc, char** argv) {
 	cin >> py1;
 	
 	cout << py1 << endl;
+	
+	ofstream w("points.txt", ios::trunc);
+	w << pz1 << endl << py1 << endl;
+	w.close();
 	
 	
 	

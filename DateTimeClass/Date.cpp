@@ -70,3 +70,19 @@ int compareDate(const void* d1, const void* d2)
 {
 	return static_cast<const Date*>(d1)->compareTo(*static_cast<const Date*>(d2));
 }
+
+ostream& operator << (ostream& s, const Date& d)
+{
+    s << d._year << '.' << setfill('0') << setw(2) << d._month 
+		<< '.' << setw(2) << d._day;
+	return s;
+}
+
+istream& operator >> (istream& s, Date& d)
+{
+    int year, month, day;
+    char ch = '.';
+    s >> year >> ch  >> month >> ch >> day;
+    d.set(year, month, day);
+	return s;	
+}
