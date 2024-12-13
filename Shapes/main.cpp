@@ -8,10 +8,16 @@ using std::cout;
 using std::endl;
 
 int main(int argc, char** argv) {
+	//Coords::CoordinateSystem s;
+	Coords c;
+	cout << c.getZ() << endl;
+	
 	Scene* pScene = new Scene();
 	pScene->add(new Point(10, 20, "green"));
 	pScene->add(new Circle(100, 200, 50, "red"));
 	
+	pScene->moveBy(5,6);
+	pScene->scale(1.5);
 	pScene->draw();
 	
 	delete pScene;

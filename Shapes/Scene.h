@@ -3,13 +3,15 @@
 
 #include <iostream>
 #include "Shape.h"
+#include "IScaleable.h"
+#include "IMoveable.h"
 
 using std::cout;
 using std::endl;
 
 const int MAX_SCENE_SIZE = 100;
 
-class Scene
+class Scene : public IScaleable 
 {
 	private:
 		Shape** obj;
@@ -47,7 +49,22 @@ class Scene
 				
 			cout << "*********************************" << endl;
 		}
+		
+		void scale(double factor) {
+			for(int i = 0; i < size; i++){
+				IScaleable* s = dynamic_cast<IScaleable*>(obj[i]);
+				if (s != NULL) s->scale(factor);
+			}
+				
+		}
 
+		void moveBy(int dx, int dy) {
+			for(int i = 0; i < size; i++){
+				IMoveable* s = dynamic_cast<IMoveable*>(obj[i]);
+				if (s != NULL) s->moveBy(dx, dy);
+			}
+				
+		}
 		
 		/*virtual*/ ~Scene()
 		{

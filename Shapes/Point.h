@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include "Shape.h"
+#include "IMoveable.h"
 
 using std::cout;
 using std::endl;
 
-class Point : public Shape
+class Point : public Shape, public IMoveable
 {
+	
 protected:
 	int _x, _y;
 
@@ -19,15 +21,19 @@ public:
 		cout << "Point (int, int, char*) ctor" << endl;
 	}
 	
-	void moveBy(int dx, int dy)
+	void moveBy(int dx, int dy) override
 	{
 		_x += dx; _y += dy;
+	}
+	void moveTo(int x, int y) override
+	{
+		_x = x; _y = y;
 	}
 	
 	void draw() const override
 	{
 		std::cout << "Point (" << x() << ", " << y() << ")  " 
-			<< "Shape (" << this->Shape::_x << ", " << this->Shape::_x << ")  " 
+			//<< "Shape (" << this->Shape::_x << ", " << this->Shape::_x << ")  " 
 			<< color() << std::endl;
 			
 		//this->Shape::draw();

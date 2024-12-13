@@ -4,18 +4,20 @@
 
 #include <iostream>
 #include <string>
+#include "IMoveable.h"
 
 using std::string;
 using std::cout;
 using std::endl;
 
-class Shape
+class Shape: public IMoveable
 {
 
 protected:
 	string* _color;
 	int _x = -1;
-	int _y = -1;	
+	int _y = -1;
+	
 	
 public:
 	const static char* DEFAULT_COLOR;
@@ -53,6 +55,16 @@ public:
 	
 	//virtual ~Shape() {};
 	//virtual ~Shape() = default;
+	
+	void moveBy(int dx, int dy) override
+	{
+		cout << "Shape::moveBy(int, int)" << endl;
+		_x += dx; _y += dy;
+	}
+	void moveTo(int x, int y) override
+	{
+		_x = x; _y = y;
+	}	
 	
 	
 	virtual ~Shape() {

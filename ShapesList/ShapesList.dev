@@ -1,6 +1,6 @@
 [Project]
-FileName=Shapes.dev
-Name=Shapes
+FileName=ShapesList.dev
+Name=ShapesList
 Type=1
 Ver=2
 ObjFiles=
@@ -27,9 +27,9 @@ CommandLine=
 Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
-CompilerSet=6
-CompilerSettings=0000000000000000000000000
-UnitCount=9
+CompilerSet=0
+CompilerSettings=00000000c0000000000000000
+UnitCount=8
 
 [VersionInfo]
 Major=1
@@ -50,16 +50,6 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit2]
-FileName=Shape.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit1]
 FileName=main.cpp
 CompileCpp=1
@@ -70,8 +60,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit2]
+FileName=Circle.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit3]
-FileName=Shape.cpp
+FileName=IScaleable.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,16 +91,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=Circle.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit6]
 FileName=Scene.h
 CompileCpp=1
 Folder=
@@ -110,8 +100,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit6]
+FileName=Shape.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit7]
-FileName=Coords.h
+FileName=Shape.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -121,17 +121,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit8]
-FileName=IScaleable.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit9]
-FileName=IMoveable.h
+FileName=List.h
 CompileCpp=1
 Folder=
 Compile=1
